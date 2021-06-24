@@ -30,7 +30,7 @@ class T5(nn.Module):
             tokenizer_args['do_lower_case'] = do_lower_case
 
         self.t5model = T5Model.from_pretrained(model_name_or_path, **model_args)
-        self.tokenizer = T5Tokenizer.from_pretrained(model_name_or_path, **tokenizer_args)
+        self.tokenizer = T5Tokenizer.from_pretrained('t5-base', **tokenizer_args)
         self.task_identifier = task_identifier
 
     def forward(self, features):
